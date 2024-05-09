@@ -79,6 +79,10 @@ nav {
     font-size: 0.8rem;
 }
 
+.top-coins {
+    overflow-x: hidden;
+}
+
 .top-coins-title {
     text-align: center;
     color: #FCC62D;
@@ -101,7 +105,7 @@ nav {
 .coins {
     display: flex;
     gap: 2rem;
-    overflow-x: scroll;
+    /* overflow: hidden; */
     white-space: nowrap;
     padding-top: 1.5rem;
     /* flex-wrap: wrap; */
@@ -123,6 +127,30 @@ nav {
 
 .coin-name {
     font-weight: 600;
+}
+
+.coins {
+    animation: var(--direction) var(--marquee-speed) linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
 }
 
 /* SEARCH */
