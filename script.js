@@ -27,6 +27,8 @@ function callApi(url)
 
 function createCoinDiv(data, exchange) {
     const coinDiv = document.createElement("div");
+    // coinDiv.setAttribute("data-aos", "zoom-out");
+    // coinDiv.setAttribute("data-aos-duration", "2000");
     coinDiv.classList.add("coin");
 
     const coinImg = document.createElement("img");
