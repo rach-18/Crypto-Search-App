@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Details</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <img src="logo (1).png" alt="logo">
+                <p>CryptoView</p>
+            </div>
+            <a class="search-btn" href="#p">Search</a>
+        </nav>
+        <div class="content">
+            <img class="content-img" src="" alt="">
+            <div class="info">
+                <div class="first-content">
+                    <p class="content-name"></p>
+                    <div class="prices">
+                        <p class="price-1"></p>
+                        <p class="price-2"></p>
+                        <p class="price-3"></p>
+                        <p class="price-4"></p>
+                    </div>
+                </div>
+                <div class="second-content">
+                    <p><b>Description:</b></p>
+                    <p class="description-para"></p>
+                </div>
+            </div>
+        </div>
+        <div class="price-history">
+            <p class="price-history-title">Price History</p>
+            <div class="chart">
+                <canvas id="cryptoChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="more-details.js"></script>
+</body>
+</html>

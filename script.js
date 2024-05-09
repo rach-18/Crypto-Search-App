@@ -4,6 +4,7 @@
 //     )}/market_chart?vs_currency=inr&days=10` yeah details wali h
 
 const coinsDiv = document.querySelector(".coins");
+let excahngeRate;
 
 const mainUrl = "https://api.coingecko.com/api/v3/search/trending";
 
@@ -24,7 +25,7 @@ function callApi(url)
    
 }
 
-function createCoinDiv(data) {
+function createCoinDiv(data, exchange) {
     const coinDiv = document.createElement("div");
     coinDiv.classList.add("coin");
 
@@ -37,29 +38,38 @@ function createCoinDiv(data) {
 
     const coinName = document.createElement("p");
     coinName.classList.add("coin-name");
-    coinName.innerHTML = data.name;
+    coinName.innerHTML = `${data.name} (${data.symbol})`;
     coinInfoDiv.appendChild(coinName);
 
     const coinPrice = document.createElement("p");
     coinPrice.classList.add("coin-price");
-    coinPrice.innerHTML = data.data.market_cap;
+    // coinPrice.innerHTML = data.data.market_cap;
+    coinPrice.innerHTML = `₹ ${convertToInr(data.price_btc, exchange)}`;
     coinInfoDiv.appendChild(coinPrice);
 
     coinDiv.appendChild(coinInfoDiv);
     coinsDiv.appendChild(coinDiv);
 }
 
+function convertToInr(convertVal, price) {
+    return Math.round(price * convertVal * 10000) / 10000;
+}
+
+callApi("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=inr")
+.then((data) => {
+    // console.log(data.bitcoin.inr);
+    excahngeRate = data.bitcoin.inr;
+})
+
 callApi(mainUrl)
 .then((data) => {
-    // console.log(data.coins);
+    console.log(data);
     data.coins.forEach((coin) => {
-        // console.log(coin);
-        // console.log(coin.item.data.market_cap);
-        createCoinDiv(coin.item);
+        createCoinDiv(coin.item, excahngeRate);
     })
 })
 
-// const response = callApi(url);
+// const response = callApi(mainUrl);
 
 // // console.log(response)
 

@@ -12,11 +12,14 @@ body {
     background-size: 60%; */
 }
 
+/* INDEX */
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2rem 4rem;
+    background: linear-gradient(#795703,#f5cc5e 0%, #f5f0e4, white);
 }
 
 .logo {
@@ -39,6 +42,12 @@ nav {
     font-weight: 600;
     text-decoration: none;
     font-size: 0.8rem;
+    transition: all 300ms;
+}
+
+.search-btn:hover {
+    background-color: #f5f0e4;
+    color: #FCC62D;
 }
 
 .hero {
@@ -105,3 +114,125 @@ nav {
 .coin-name {
     font-weight: 600;
 }
+
+/* SEARCH */
+.search-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #FCC62D;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+}
+
+.search-form {
+    margin-top: 2rem;
+}
+
+.search input {
+    padding: 1rem;
+    width: 40%;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    border: 1px solid #f5f0e4;
+}
+
+.search button {
+    padding: 1rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border: 1px solid #f5f0e4;
+    background-color: #f5f0e4;
+    cursor: pointer;
+}
+
+.search-txt {
+    text-align: center;
+    color: #FCC62D;
+}
+
+.search-results {
+    margin: 4rem 0;
+}
+
+.result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 4rem;
+    /* border: 1px solid black; */
+    border: none;
+    color: #795703;
+    padding: 1.2rem 2rem;
+    border-radius: 0.5rem;
+    background-color: #f5cc5e;
+    transition: all 300ms;
+}
+
+.result:hover {
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.more-info-btn {
+    background-color: #795703;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 300ms;
+}
+
+.more-info-btn:hover {
+    background-color: #f5f0e4;
+    color: #795703;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* DETAILS */
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 0 2rem;
+}
+
+.content-name {
+    color: #FCC62D;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.prices {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+
+.price-history {
+    padding: 3rem 2rem;
+}
+
+.price-history-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #FCC62D;
+}
+
+/* .content-img {
+    width: 100%;
+} */
